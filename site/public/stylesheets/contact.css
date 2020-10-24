@@ -1,0 +1,18 @@
+.direct-contact {
+  margin: 30% 0;
+}
+
+.contact-zone {
+  margin: 5% 0;
+}
+
+#email:valid {
+  color: black;
+}
+#email:invalid {
+  color: red;
+}
+
+sup {
+    color: #ff0000;
+}

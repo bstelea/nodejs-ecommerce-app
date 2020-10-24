@@ -1,0 +1,38 @@
+.content {
+    margin: 5% auto;
+}
+
+.greeting {
+    font-size: 2em;
+}
+
+.logout-button {
+    text-align: right;
+}
+
+.details {
+    margin: 5% auto;
+}
+
+.statistics {
+    margin: 5% auto;
+}
+
+.statistics .title {
+    font-weight: bold;
+}
+
+.orders {
+    margin: 3% auto;
+    font-size: 1.5em;
+}
+
+.title-row {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .order-table-title {
+        display: none;
+    }
+}

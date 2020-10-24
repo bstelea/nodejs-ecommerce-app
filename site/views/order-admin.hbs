@@ -1,0 +1,47 @@
+<h1>Coffee Bag</h1>
+<h2>New Order</h2>
+<span>Dear Admin, <br /></span>
+<span>A new order has been placed. Please find below a summary of the order</span>
+
+<h3>Customer details</h3>
+
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Address 2</th>
+        <th>City</th>
+        <th>Zip</th>
+    </tr>
+    <tr>
+        <td>{{contactDetails.firstName}}</td>
+        <td>{{contactDetails.lastName}}</td>
+        <td>{{contactDetails.email}}</td>
+        <td>{{contactDetails.address}}</td>
+        <td>{{contactDetails.address2}}</td>
+        <td>{{contactDetails.city}}</td>
+        <td>{{contactDetails.zip}}</td>
+    </tr>
+</table>
+
+<h3>Cart</h3>
+
+<table>
+    <tr>
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        {{# each products }}
+        <td><strong>{{ this.item.title }}</strong></td>
+        <td><em>{{{this.item.description}}}</em></td>
+        <td>{{ this.quantity }}</td>
+        <td>£{{ this.price }}</td>
+        {{/each}}
+    </tr>
+</table>
+<h3>Total: £{{ totalPrice }}</h3>

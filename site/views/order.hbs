@@ -1,0 +1,74 @@
+{{> header}}
+
+<div class="container content">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Order#{{order.id}}</h1>
+        </div>
+        <div class="col-md-6">
+            <a href="/account" class="btn btn-primary">Go Back</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 order-title">
+            <span>Order Details</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <span>First Name: {{order.firstName}}</span>
+        </div>
+
+        <div class="col-md-6">
+            <span>Last Name: {{order.lastName}}</span>
+        </div>
+
+        <div class="col-md-12">
+            <span>Email: {{order.email}}</span>
+        </div>
+
+        <div class="col-md-12">
+            <span>Address: {{order.address}} {{order.address2}} {{order.zip}} {{order.city}}</span>
+        </div>
+
+        <div class="col-md-12">
+            <span>Total: £{{order.total}}</span>
+        </div>
+
+        <div class="col-md-12">
+            <span>Placed at: {{day}}/{{month}}/{{year}} {{hour}}:{{minute}}:{{second}}</span>
+        </div>
+    </div>
+    {{#if products}}
+    <div class="row">
+        <div class="col-md-12 order-title">
+            <span>Products Ordered</span>
+        </div>
+    </div>
+    <div class="product-table-title">
+        <div class="row product-title text-center">
+            <div class="col-md-2">Image</div>
+            <div class="col-md-2">Name</div>
+            <div class="col-md-2">Product ID</div>
+            <div class="col-md-2">Category</div>
+            <div class="col-md-2">Quantity</div>
+            <div class="col-md-2">Price</div>
+        </div>
+    </div>
+    {{/if}}
+    {{#each products}}
+    <div class="row text-center">
+        <div class="col-md-2"><img src="{{this.image}}" alt="{{this.name}}" class="product-image" /></div>
+        <div class="col-md-2 vertical-middle">{{this.title}}</div>
+        <div class="col-md-2 vertical-middle">#{{this.id}}</div>
+        <div class="col-md-2 vertical-middle">{{this.category}}</div>
+        <div class="col-md-2 vertical-middle">x {{this.quantity}}</div>
+        <div class="col-md-2 vertical-middle">£{{this.price}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <hr />
+        </div>
+    </div>
+    {{/each}}
+</div>

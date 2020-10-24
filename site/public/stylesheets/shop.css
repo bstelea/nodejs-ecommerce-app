@@ -1,0 +1,37 @@
+.shop-container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.product-link {
+    margin-top: 10%;
+}
+
+.product-card {
+    margin-bottom: 5%;
+}
+
+.sort {
+    margin-bottom: 5%;
+}
+
+.filter-content {
+    margin-top: 15%;
+    margin-bottom: 15%;
+}
+
+form .btn {
+    margin-top: 15%;
+}
+
+form label {
+    font-size: 1.25em;
+}
+
+.out-of-stock-price {
+    text-decoration: line-through;
+}
+
+.out-of-stock-text {
+    color: #ff0000;
+}

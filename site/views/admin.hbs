@@ -1,0 +1,118 @@
+{{> header}}
+
+<div class="container content">
+    <div class="row">
+        <div class="col-md-6 greeting">
+            <h1>Welcome Admin,</h1>
+        </div>
+        <div class="col-md-6 logout-button">
+            <form method='post' action='/logout'>
+                <button type="submit" class="btn btn-primary">Logout</button>
+            </form>
+        </div>
+    </div>
+    <div class="row details">
+        <div class="col-md-12">
+            <h2>Admin Details</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <span>First Name: {{admin.firstName}}</span>
+        </div>
+        <div class="col-md-6">
+            <span>Last Name: {{admin.lastName}}</span>
+        </div>
+        <div class="col-md-12">
+            <span>Email: {{admin.email}}</span>
+        </div>
+    </div>
+    <div class="row statistics">
+        <div class="col-md-4">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-6">
+                        <span class="title">Number of Orders:</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <span>{{numberOfOrders}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-6">
+                        <span class="title">Number of Products Out of Stock:</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <span>{{numberOfStockZeroProducts}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-6">
+                        <span class="title">Total Revenue:</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <span>£{{totalRevenue}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 orders">
+            <span>All Orders:</span>
+        </div>
+    </div>
+    <div class="order-table-title">
+        <div class="row text-center title-row">
+            <div class="col-md-4">
+                <span>Order Number</span>
+            </div>
+            <div class="col-md-4">
+                <span>Total Price</span>
+            </div>
+            <div class="col-md-4">
+                <span>View details</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <hr />
+            </div>
+        </div>
+    </div>
+
+    {{#each orders}}
+    <div class="row text-center">
+        <div class="col-md-4">
+            <span>Order#{{this.id}}</span>
+        </div>
+        <div class="col-md-4">
+            <span>£{{this.total}}</span>
+        </div>
+        <div class="col-md-4">
+            <a href="/order?orderId={{this.id}}">View More</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <hr />
+        </div>
+    </div>
+    {{/each}}
+</div>

@@ -1,0 +1,78 @@
+{{> header}}
+
+<div class="container content">
+    <div class="row">
+        <div class="col-md-6 greeting">
+            <span>Welcome {{user.firstName}}</span>
+        </div>
+        <div class="col-md-6 logout-button">
+            <form method='post' action='/logout'>
+                <button type="submit" class="btn btn-primary">Logout</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 details">
+            <span>Your details:</span>
+        </div>
+        <div class="col-md-6 name">
+            <span>First Name: {{user.firstName}}</span>
+        </div>
+        <div class="col-md-6 name">
+            <span>Last Name: {{user.lastName}}</span>
+        </div>
+        <div class="col-md-12 email">
+            <span>Email: {{user.email}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form method='post' action='/delete'>
+                <button type="submit" class="btn btn-danger" id="delete-button">Delete your account</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 orders">
+            <span>Your orders:</span>
+        </div>
+    </div>
+
+    <div class="order-table-title">
+        <div class="row text-center title-row">
+            <div class="col-md-4">
+                <span>Order Number</span>
+            </div>
+            <div class="col-md-4">
+                <span>Total Price</span>
+            </div>
+            <div class="col-md-4">
+                <span>View details</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <hr />
+            </div>
+        </div>
+    </div>
+
+    {{#each orders}}
+    <div class="row text-center">
+        <div class="col-md-4">
+            <span>Order#{{this.id}}</span>
+        </div>
+        <div class="col-md-4">
+            <span>£{{this.total}}</span>
+        </div>
+        <div class="col-md-4">
+            <a href="/order?orderId={{this.id}}">View More</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <hr />
+        </div>
+    </div>
+    {{/each}}
+</div>

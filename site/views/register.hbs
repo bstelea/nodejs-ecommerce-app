@@ -1,0 +1,38 @@
+{{> header}}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 content">
+            <form class="form" id="registerForm" action="/register" method="post">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="firstName">First Name<sup>*</sup></label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required="required"/>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="lastName">Last Name<sup>*</sup></label>
+                        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" required="required"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email<sup>*</sup></label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required="required"/>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password<sup>*</sup></label>
+                    <input type="password" class="form-control" id="passwordInput" name="password" placeholder="Password" required="required" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
+                    <p></p>
+                    <p>Password must meet the following requirements:</p>
+                    <ul>
+                    <li class = "red" id="8chars">There must be at least 8 characters;</li>
+                    <li id="lowercase" class = "red" >There must be at least one lowercase letter;</li>
+                    <li class = "red" id="uppercase">There must be at least one uppercase letter;</li>
+                    <li class = "red" id="onenumber">There must be at least one number.</li>
+                    </ul>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" id="okButton">Register</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,95 @@
+.logo {
+    width: 10%;
+}
+
+.cart {
+    height: 30px;
+}
+
+svg:hover #LeftWheel, svg:hover #RightWheel {
+    animation: wheel 2s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes wheel{
+    from {
+        transform: rotateZ(0deg);
+	}
+    to{
+        transform: rotateZ(360deg);
+	}
+}
+
+svg:hover #ClockBigArm {
+    animation: wheel 2s infinite linear;
+    transform-origin: 100% 0%;
+    transform-box: fill-box;
+}
+
+svg:hover #ClockLittleArm {
+    animation: wheel 24s infinite linear;
+    transform-origin: 0% 100%;
+    transform-box: fill-box;
+}
+
+svg:hover {
+    cursor: pointer;
+}
+
+svg:hover #deliveryVan{
+    animation: move 2s infinite alternate;
+}
+
+@keyframes move{
+    from {
+        transform: translateY(0%);
+	}
+    to {
+        transform: translateY(3%);
+	}
+}
+
+#coffeeBean:hover{
+    cursor: pointer;
+    animation-name: spin;
+    animation-delay: 4s;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+#path1, #path2, #path3 {
+    opacity: 0.1;
+    fill-opacity: 0;
+}
+
+ #coffeeBean:hover #path1, #coffeeBean:hover #path2, #coffeeBean:hover #path3 {
+    fill-opacity: 0;
+    opacity: 1;
+    stroke-dasharray: 500px;
+    stroke-dashoffset: 500px;
+    animation-name: draw;
+    animation-duration: 4s;
+    animation-fill-mode: forwards; 
+    animation-iteration-count: 1; 
+    animation-timing-function: linear;
+  }
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+    fill-opacity:1;
+  }
+}
+
+@keyframes spin{
+    from{
+        transform: rotateZ(0deg);
+	}
+    to{
+        transform: rotateZ(360deg);
+	}
+}

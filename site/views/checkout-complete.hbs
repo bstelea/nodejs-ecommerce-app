@@ -1,0 +1,57 @@
+{{> header}}
+
+<!-- Content -->
+<section class="container">
+    <div class="row">
+        <div class="col-md-12 align-items-center">
+            <h1 class="title">Thank you for your order!</h1>
+            <p>Your credentials have been processed successfully. You will receive an email shortly with your order summary.</p>
+        </div>
+    </div>
+    <div class="row">
+        <h3>Your details</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-4">Name</div>
+        <div class="col-md-4">Email</div>
+        <div class="col-md-4">Address</div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">{{contactDetails.firstName}} {{contactDetails.lastName}}</div>
+        <div class="col-md-4">{{contactDetails.email}}</div>
+        <div class="col-md-4">{{contactDetails.address}} {{contactDetails.address2}} {{contactDetails.city}} {{contactDetails.zip}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Your cart</h3>
+        </div>
+    </div>
+    {{# each products }}
+    <div class="row">
+        <div class="col-md-3">
+            <strong>{{ this.item.title }}</strong>
+        </div>
+        <div class="col-md-3">
+            <em>{{{this.item.description}}}</em>
+        </div>
+        <div class="col-md-3">
+            <span class="badge badge-secondary badge-pill">{{ this.quantity }}</span>
+        </div>
+        <div class="col-md-3">
+            £{{ this.price }}
+        </div>
+    </div>
+    {{/each}}
+    <div class="row">
+        <div class="col-md-12">
+            Total: £{{ totalPrice }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/" class="btn btn-primary">Go back</a>
+        </div>
+    </div>
+
+</section>

@@ -1,0 +1,30 @@
+{{> header}}
+
+{{# if products }}
+<div class="container cart-content">
+        {{# each products }}
+        <div class="row">
+            <div class="col-md-3"><strong>{{ this.item.title }}</strong></div>
+            <div class="col-md-3"><em>{{{this.item.description}}}</em></div>
+            <div class="col-md-3"><span class="badge badge-secondary badge-pill">{{ this.quantity }}</span></div>
+            <div class="col-md-2">£{{ this.price }}</div>
+            <div class="col-md-1"><a href="/shop/remove/{{this.item.id}}" class="btn btn-default">Remove</a></div>
+        </div>
+        {{/each}}
+</div>
+<div class="container text-right cart-total">
+    <h3>Total: £{{ totalPrice }}</h3>
+</div>
+<hr />
+<div class="text-right">
+    <a href="/checkout" type="button" class="btn btn-success checkout-btn">Checkout</a>
+</div>
+{{ else }}
+<div class="container cart-empty">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <span>Your shopping cart is empty.</span>
+        </div>
+    </div>
+</div>
+{{/if}}

@@ -1,0 +1,30 @@
+.content {
+    margin: 5% auto;
+}
+
+.greeting {
+    font-size: 2em;
+}
+
+.logout-button {
+    text-align: right;
+}
+
+.details, .orders {
+    margin: 3% auto;
+    font-size: 1.5em;
+}
+
+.name, .email, .address {
+    margin: 1% auto;
+}
+
+.title-row {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .order-table-title {
+        display: none;
+    }
+}

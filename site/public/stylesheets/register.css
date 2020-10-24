@@ -1,0 +1,33 @@
+.content {
+    margin: 5% auto;
+}
+
+#email:invalid{
+    color:red;
+}
+
+#email:valid{
+    color:black;
+}
+
+.p{
+    white-space: pre;
+    font-style: italic;
+}
+
+.ul{
+    white-space: pre;
+    font-style: italic;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+sup {
+    color: #ff0000;
+}

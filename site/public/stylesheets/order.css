@@ -1,0 +1,26 @@
+.content {
+    margin: 5% auto;
+}
+
+.order-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.product-title {
+    font-weight: bold;
+}
+
+.product-image {
+    width: 100%;
+}
+
+.vertical-middle {
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+    .product-table-title {
+        display: none;
+    }
+}
